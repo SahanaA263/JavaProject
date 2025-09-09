@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head><meta charset="UTF-8"/><title>Bookings</title></head>
+<body>
+  <h1>Bookings</h1>
+  <a th:href="@{/}">Home</a> | <a th:href="@{/bookings/new}">New Booking</a> | <a th:href="@{/rooms}">Rooms</a>
+  <table border="1" cellpadding="6">
+    <tr><th>ID</th><th>Guest</th><th>Room</th><th>From</th><th>To</th></tr>
+    <tr th:each="b : ${bookings}">
+      <td th:text="${b.id}"></td>
+      <td th:text="${b.guestName}"></td>
+      <td th:text="${b.room.number}"></td>
+      <td th:text="${b.fromDate}"></td>
+      <td th:text="${b.toDate}"></td>
+    </tr>
+  </table>
+</body>
+</html>
